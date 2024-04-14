@@ -55,14 +55,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     const string scheme = "Bearer";
+
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "My Identity Service",
+        Title = "4FitBody site for users api",
         Version = "v1"
     });
 
     options.AddSecurityDefinition(
         name: scheme,
+
         new OpenApiSecurityScheme() {
             Description = "Enter here jwt token with Bearer",
             In = ParameterLocation.Header,
