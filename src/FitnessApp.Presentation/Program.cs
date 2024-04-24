@@ -105,7 +105,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuers = jwtOptions.Issuers,
         };
     });
+
 builder.Services.AddAuthorization();
+
+builder.Services.AddCors(options => {
+    options.AddPolicy("BlazorWasmPolicy", corsBuilder => {
+        corsBuilder
+            .WithOrigins("http://localhost:5160")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
