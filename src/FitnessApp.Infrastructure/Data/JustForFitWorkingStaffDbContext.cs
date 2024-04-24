@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using FitnessApp.Core.Users.Models;
+using FitnessApp.Core.Tokens.Models;
 
 public class FitnessAppDbContext : IdentityDbContext<User, IdentityRole, string>
 {
@@ -15,6 +16,7 @@ public class FitnessAppDbContext : IdentityDbContext<User, IdentityRole, string>
     public DbSet<News> News { get; set; }
     public DbSet<Food> Food { get; set; }
     public DbSet<SportSupplement> SportSupplements { get; set; }
-
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+    
     public FitnessAppDbContext(DbContextOptions<FitnessAppDbContext> options) : base(options) { }
 }
