@@ -5,4 +5,5 @@ using FitnessApp.Core.Food.Models;
 public interface IFoodRepository
 {
     Task<IEnumerable<Food>?> GetAllAsync();
+    Task<Food> GetByIdAsync(int id);
 }

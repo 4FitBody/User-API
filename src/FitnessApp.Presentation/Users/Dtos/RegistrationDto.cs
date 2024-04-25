@@ -1,6 +1,6 @@
 namespace FitnessApp.Presentation.Users.Dtos;
 
-public class RegisterDto
+public class RegistrationDto
 {
     public string? Name { get; set; }
     public string? Surname { get; set; }

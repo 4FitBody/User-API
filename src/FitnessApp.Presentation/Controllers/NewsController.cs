@@ -27,6 +27,7 @@ public class NewsController : ControllerBase
     }
 
     [HttpGet]
+    [Route("/api/[controller]/[action]/{id}")]
     public async Task<IActionResult> Details(int? id)
     {
         var getByIdQuery = new GetByIdQuery(id);

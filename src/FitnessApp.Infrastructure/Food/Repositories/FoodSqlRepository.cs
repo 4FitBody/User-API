@@ -20,4 +20,11 @@ public class FoodSqlRepository : IFoodRepository
 
         return food;
     }
+
+    public async Task<Food> GetByIdAsync(int id)
+    {
+        var food = await this.dbContext.Food.FirstOrDefaultAsync(f => f.Id == id);
+
+        return food;
+    }
 }
